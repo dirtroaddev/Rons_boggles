@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Blogly
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- {% for col in board %}
+    {{col}}<br>
+{% endfor %} -->
+
+<table class="board table table-primary">
+    <tbody>
+      {% for row in board %}
+      <tr>
+        {% for cell in row %}
+        <td class="text-center text-success fs-2">{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="word" class="form-label">Enter Your Word:</label>
+        <input type="text" id="word" name="word" class="form-control">
+    </div>
+    <button id="submit_btn" class="btn btn-primary">SUBMIT</button>
+</form>
+
+<p id="right_or_wrong"></p>
+Score:<p id="display_score">0</p>
+
+
+
+{% endblock %}
